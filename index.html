@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Serena Crespi | Digital Philology</title>
+
+  <meta name="description"
+        content="Serena Crespi — Digital philology and computational approaches to historical manuscripts.">
+
+  <style>
+    :root {
+      --bg: #f8f7f4;
+      --card: #ffffff;
+      --text: #202020;
+      --muted: #686868;
+      --line: #dedbd6;
+      --accent: #74465e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 28px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      font-size: 0.92rem;
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 30px 70px;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 105px 0 120px;
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      margin: 0 0 35px;
+    }
+
+    .position {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .affiliation {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 35px;
+    }
+
+    .tagline {
+      max-width: 760px;
+      font-size: 1.45rem;
+      line-height: 1.5;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .tagline strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .profile-links {
+      display: flex;
+      gap: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .profile-links a {
+      color: var(--accent);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-weight: 500;
+      margin: 0 0 45px;
+    }
+
+    /* RESEARCH */
+
+    .research-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 70px;
+    }
+
+    .research-areas {
+      color: var(--muted);
+      line-height: 2;
+      font-size: 0.95rem;
+    }
+
+    .research-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      line-height: 1.75;
+      max-width: 700px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 32px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: #aaa5a0;
+    }
+
+    .project-number {
+      color: var(--muted);
+      font-size: 0.75rem;
+      margin-bottom: 40px;
+    }
+
+    .project h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0 0 15px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin: 0 0 30px;
+    }
+
+    .project-links {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .project-links a {
+      color: var(--accent);
+    }
+
+    /* PUBLICATIONS */
+
+    .publication {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 30px;
+      padding: 27px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .publication:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub-year {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pub-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.2rem;
+      line-height: 1.45;
+      margin-bottom: 7px;
+    }
+
+    .pub-info {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .more-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* DIGITAL OUTPUTS */
+
+    .outputs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 50px;
+    }
+
+    .output {
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .output h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin: 0 0 8px;
+    }
+
+    .output-meta {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .output a {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ABOUT */
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 70px;
+    }
+
+    .about-keywords {
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .about-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      line-height: 1.75;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 35px 0 5px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .projects,
+      .outputs {
+        grid-template-columns: 1fr;
+      }
+
+      .research-layout,
+      .about-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav,
+      main {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero {
+        padding: 75px 0 90px;
+      }
+
+      .publication {
+        grid-template-columns: 60px 1fr;
+        gap: 15px;
+      }
+
+      .profile-links {
+        flex-wrap: wrap;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a class="site-name" href="#">Serena Crespi</a>
+
+  <div class="nav-links">
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#outputs">Software & Data</a>
+    <a href="#about">About</a>
+  </div>
+</nav>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <h1>Serena Crespi</h1>
+
+    <div class="position">
+      Research Engineer in Digital Humanities
+    </div>
+
+    <div class="affiliation">
+      Centre d'Études Supérieures de la Renaissance · Université de Tours
+      <br>
+      ERC PRIMA — Manuscripts in the Age of Print (1575–1800)
+    </div>
+
+    <div class="tagline">
+      <strong>
+        Digital philology and computational approaches to historical manuscripts.
+      </strong>
+      My research combines manuscript studies, textual scholarship,
+      computational palaeography and handwritten text recognition.
+    </div>
+
+    <div class="profile-links">
+      <a href="https://orcid.org/0000-0001-6747-3257"
+         target="_blank" rel="noopener">
+        ORCID ↗
+      </a>
+
+      <a href="https://github.com/SerenaCrespi"
+         target="_blank" rel="noopener">
+        GitHub ↗
+      </a>
+    </div>
+
+  </header>
+
+
+  <!-- RESEARCH -->
+
+  <section id="research">
+
+    <div class="section-label">Research</div>
+
+    <h2>Manuscripts, texts & computation</h2>
+
+    <div class="research-layout">
+
+      <div class="research-areas">
+        Digital Philology<br>
+        Manuscript & Print Culture<br>
+        Computational Palaeography<br>
+        Handwritten Text Recognition<br>
+        Digital Scholarly Editing
+      </div>
+
+      <div class="research-text">
+        My research investigates the production, transmission and
+        circulation of texts between manuscript and print, with a
+        particular focus on early modern Italian sources. I combine
+        philological and palaeographical research with computational
+        methods for textual analysis, handwritten text recognition,
+        digital editing and the study of historical handwriting.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-label">Selected projects</div>
+
+    <h2>Research & software</h2>
+
+    <div class="projects">
+
+
+      <!-- PLUMA -->
+
+      <article class="project">
+
+        <div class="project-number">01</div>
+
+        <h3>PLUMA</h3>
+
+        <p>
+          <em>Palaeographic Letterform Understanding and Manuscript Analysis.</em>
+          A research environment for letterform-level annotation,
+          computer-vision analysis and computational palaeography.
+        </p>
+
+        <div class="project-links">
+          <a href="https://scm.univ-tours.fr/cesr/prima/paleo"
+             target="_blank" rel="noopener">
+            PROJECT ↗
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- POEMS IN MOTION -->
+
+      <article class="project">
+
+        <div class="project-number">02</div>
+
+        <h3>Poems in Motion</h3>
+
+        <p>
+          A computational study of manuscript and print transmission,
+          integrating textual, material, bibliographical, chronological
+          and paratextual evidence.
+        </p>
+
+        <div class="project-links">
+          <span>PROJECT IN DEVELOPMENT</span>
+        </div>
+
+      </article>
+
+
+      <!-- HTR -->
+
+      <article class="project">
+
+        <div class="project-number">03</div>
+
+        <h3>HTR & Data Augmentation</h3>
+
+        <p>
+          Methods and tools for handwritten text recognition,
+          controlled normalisation and data augmentation for
+          premodern Italian manuscripts.
+        </p>
+
+        <div class="project-links">
+          <a href="https://github.com/SerenaCrespi"
+             target="_blank" rel="noopener">
+            GITHUB ↗
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- MIV17 -->
+
+      <article class="project">
+
+        <div class="project-number">04</div>
+
+        <h3>MIV17</h3>
+
+        <p>
+          <em>Manoscritti italiani del XVII secolo.</em>
+          A research database for the census and study of
+          seventeenth-century Italian manuscripts, subsequently
+          integrated into the PRIMA database.
+        </p>
+
+        <div class="project-links">
+          <a href="https://miv17.labdilef.it/"
+             target="_blank" rel="noopener">
+            DATABASE ↗
+          </a>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PUBLICATIONS -->
+
+  <section id="publications">
+
+    <div class="section-label">Selected publications</div>
+
+    <h2>Recent work</h2>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2027</div>
+
+      <div>
+        <div class="pub-title">
+          Preserving Variation, Modelling the Norm:
+          Towards Controlled Normalisation of HTR Texts
+          in Early Modern Italian
+        </div>
+
+        <div class="pub-info">
+          Serena C. Crespi, Carlos-Emiliano González-Gallardo
+          & Maria Antonia Papa ·
+          <em>Umanistica Digitale</em> · forthcoming
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2027</div>
+
+      <div>
+        <div class="pub-title">
+          Text First! Multimodal Data Augmentation for Automated
+          Recognition of Handwritten Premodern Italian Manuscripts
+        </div>
+
+        <div class="pub-info">
+          Serena C. Crespi & Carlos-Emiliano González-Gallardo ·
+          <em>Critical Approaches to Automated Text Recognition:
+          Transcribing Historical Documents in the Age of Artificial Intelligence</em> ·
+          Facet Publishing · forthcoming Spring 2027
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2027</div>
+
+      <div>
+        <div class="pub-title">
+          Manuscript beyond Print: Exploring Seventeenth-Century
+          Manuscript Culture in Florence through a Multilevel Analysis
+        </div>
+
+        <div class="pub-info">
+          Serena C. Crespi · Brepols · forthcoming
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="publication">
+
+      <div class="pub-year">2026</div>
+
+      <div>
+        <div class="pub-title">
+          Computational Palaeography and Early Modern Italian Scripts:
+          Methods and Workflows for Letterform Analysis
+        </div>
+
+        <div class="pub-info">
+          Serena C. Crespi, Ambra Stefanello &
+          Carlos-Emiliano González-Gallardo ·
+          4th International Workshop on Computational Palaeography ·
+          ICDAR 2026
+        </div>
+      </div>
+
+    </div>
+
+
+    <a class="more-link"
+       href="https://orcid.org/0000-0001-6747-3257"
+       target="_blank" rel="noopener">
+      VIEW PUBLICATIONS ON ORCID ↗
+    </a>
+
+  </section>
+
+
+  <!-- SOFTWARE & DATA -->
+
+  <section id="outputs">
+
+    <div class="section-label">Research outputs</div>
+
+    <h2>Software, models & digital resources</h2>
+
+    <div class="outputs">
+
+
+      <div class="output">
+
+        <h3>
+          PLUMA: Palaeographic Letterform Understanding
+          and Manuscript Analysis
+        </h3>
+
+        <div class="output-meta">
+          Digital research environment · 2026
+        </div>
+
+        <a href="https://scm.univ-tours.fr/cesr/prima/paleo"
+           target="_blank" rel="noopener">
+          VIEW PROJECT ↗
+        </a>
+
+      </div>
+
+
+      <div class="output">
+
+        <h3>
+          PRIMA HTR Model: Italian Early Modern Manuscripts,
+          late sixteenth to eighteenth century
+        </h3>
+
+        <div class="output-meta">
+          HTR model · version 1.0 · 2025
+        </div>
+
+        <a href="https://doi.org/10.5281/zenodo.18220238"
+           target="_blank" rel="noopener">
+          ZENODO / DOI ↗
+        </a>
+
+      </div>
+
+
+      <div class="output">
+
+        <h3>
+          PRIMA HTR Technical Manual
+        </h3>
+
+        <div class="output-meta">
+          Dataset preparation, segmentation and transcription
+          guidelines for early modern Italian manuscripts · 2025
+        </div>
+
+        <a href="https://scm.univ-tours.fr/cesr/prima/htr"
+           target="_blank" rel="noopener">
+          DOCUMENTATION ↗
+        </a>
+
+      </div>
+
+
+      <div class="output">
+
+        <h3>
+          PRIMA HTR Augmentation Code
+        </h3>
+
+        <div class="output-meta">
+          Serena C. Crespi & Carlos-Emiliano González-Gallardo · 2025
+        </div>
+
+        <a href="https://scm.univ-tours.fr/cesr/prima/data_augmentation"
+           target="_blank" rel="noopener">
+          SOURCE CODE ↗
+        </a>
+
+      </div>
+
+
+      <div class="output">
+
+        <h3>
+          HTR Multi-Model Evaluation Tool
+        </h3>
+
+        <div class="output-meta">
+          ERC PRIMA · Université de Tours · 2025
+        </div>
+
+      </div>
+
+
+      <div class="output">
+
+        <h3>
+          Digital Critical Edition of Ms. 48,
+          <em>Gesuiteide</em> by Filippo Buttari Caccianemici
+        </h3>
+
+        <div class="output-meta">
+          Digital scholarly edition · FonteGaia · 2020
+        </div>
+
+        <a href="https://fontegaia.huma-num.fr/tei/gesuiteide-tei/index.html"
+           target="_blank" rel="noopener">
+          EDITION ↗
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-label">About</div>
+
+    <h2>Research profile</h2>
+
+    <div class="about-layout">
+
+      <div class="about-keywords">
+        Digital Humanities<br>
+        Italian Philology<br>
+        Manuscript Studies<br>
+        Computational Palaeography<br>
+        HTR
+      </div>
+
+      <div class="about-text">
+        I am a researcher in digital philology working at the intersection
+        of manuscript studies, textual scholarship and digital humanities.
+        My research focuses on early modern Italian manuscript culture,
+        textual transmission, and computational approaches to historical
+        texts and handwriting.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      © Serena Crespi
+    </div>
+
+    <div class="footer-links">
+
+      <a href="https://orcid.org/0000-0001-6747-3257"
+         target="_blank" rel="noopener">
+        ORCID
+      </a>
+
+      <a href="https://github.com/SerenaCrespi"
+         target="_blank" rel="noopener">
+        GitHub
+      </a>
+
+    </div>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
