@@ -476,6 +476,114 @@
         flex-direction: column;
       }
     }
+
+    /* Academic profile layout */
+    :root { --bg:#f3f5f9; --text:#232b3b; --muted:#687286; --accent:#253b64; --accent-dark:#1b2a4e; --accent-soft:#e8edf7; --line:#e0e5ee; --radius:12px; }
+    body { display:grid; grid-template-columns:250px minmax(0,1fr); gap:30px; max-width:1400px; margin:auto; padding:28px; font-size:15px; }
+    .nav-shell { position:sticky; top:28px; align-self:start; border:1px solid var(--line); border-radius:12px; background:white; backdrop-filter:none; }
+    nav { display:block; padding:28px 22px; }
+    .brand { display:block; font-size:22px; line-height:1.2; color:var(--accent); }
+    .brand span { color:inherit; }
+    .sidebar-description { color:var(--muted); font-size:13px; margin:12px 0 24px; }
+    .nav-links { display:flex; flex-direction:column; gap:6px; font-size:14px; }
+    .nav-links a { padding:9px 12px; border-radius:6px; }
+    .nav-links a:hover,.nav-links a.active { background:var(--accent-soft); color:var(--accent); }
+    .sidebar-contact { border-top:1px solid var(--line); padding-top:18px; margin-top:22px; font-size:12px; overflow-wrap:anywhere; color:var(--muted); }
+    main { padding:0; min-width:0; width:100%; }
+    .hero { max-width:none; padding:48px; border-radius:12px; background:var(--accent-dark); color:white; position:relative; overflow:hidden; }
+    .hero::after { content:'Aa'; position:absolute; right:24px; top:10px; font-family:Georgia,serif; font-size:210px; font-style:italic; opacity:.06; pointer-events:none; }
+    .hero-kicker { color:#e1b19d; font-size:11px; margin-bottom:20px; }
+    h1 { font-family:Georgia,serif; font-weight:400; font-size:clamp(2.4rem,4.4vw,4rem); letter-spacing:-.035em; line-height:1.1; }
+    .hero-lead { font-size:20px; max-width:620px; }
+    .affiliation { color:#d3dbea; font-size:13px; }
+    .profile-links { margin-top:25px; gap:12px; }
+    .profile-links a { color:white; border:1px solid #65738f; border-radius:6px; padding:7px 12px; font-size:12px; }
+    section { padding:32px 0 0; border:0; scroll-margin-top:24px; }
+    .section-label { font-size:10px; letter-spacing:.13em; margin-bottom:8px; color:#a14b31; }
+    h2 { color:var(--accent); font-size:25px; margin-bottom:20px; letter-spacing:-.025em; }
+    .research-layout { background:white; border:1px solid var(--line); border-radius:12px; padding:28px; gap:28px; grid-template-columns:minmax(0,1fr) 190px; }
+    .research-text { font-size:15px; line-height:1.8; }
+    .research-layout h2 { font-size:23px; }
+    .keyword { font-size:11px; padding:5px 10px; }
+    .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .project-card { aspect-ratio:auto; min-height:230px; padding:24px; border:1px solid var(--line); border-top:3px solid #b56347; }
+    .project-card h3 { color:var(--accent); font-size:19px; }
+    .project-card p { font-size:14px; }
+    .project-number { color:#a14b31; }
+    .project-footer { font-size:12px; }
+    .output-list,.publication-list,.cv-panel { background:white; border:1px solid var(--line); border-radius:12px; padding:8px 24px; }
+    .output-row { grid-template-columns:85px minmax(0,1fr) 40px 110px; gap:16px; }
+    .output-title { font-size:14px; }
+    .output-type,.output-year,.output-link { font-size:11px; }
+    .publication { padding:20px 0; }
+    .pub-title { font-size:15px; }
+    .pub-info { font-size:13px; }
+    .cv-row { display:grid; grid-template-columns:110px minmax(0,1fr); gap:18px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .cv-row:last-child { border:0; }
+    .cv-date { font-size:12px; color:#a14b31; font-weight:600; }
+    .cv-row h3 { margin:0 0 5px; font-size:15px; color:var(--accent); }
+    .cv-row p { margin:0; font-size:13px; color:var(--muted); }
+    .section-intro { margin:0 0 18px; color:var(--muted); font-size:14px; }
+    .text-link { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+    footer { margin-top:35px; font-size:11px; gap:20px; }
+    .reveal { opacity:1; transform:none; }
+    @media(max-width:1000px) { body { grid-template-columns:210px minmax(0,1fr); padding:20px; gap:20px; } .hero { padding:32px; } .research-layout { grid-template-columns:1fr; } .output-row { grid-template-columns:75px minmax(0,1fr) 40px; } .output-link { grid-column:2 / 4; text-align:left; } }
+    @media(max-width:700px) { body { display:block; padding:16px; } .nav-shell { position:relative; top:0; margin-bottom:16px; } nav { padding:18px; } .sidebar-description { margin:8px 0 14px; } .nav-links { flex-direction:row; flex-wrap:wrap; gap:4px; } .nav-links a { padding:6px 8px; font-size:12px; } .nav-links a:nth-child(2),.nav-links a:nth-child(3) { display:block; } .sidebar-contact { display:none; } .hero { padding:30px 24px; } .hero-lead { font-size:18px; } .project-grid { grid-template-columns:1fr; } .project-card { min-height:210px; } .research-layout { padding:22px; } .cv-row { grid-template-columns:1fr; gap:7px; } .output-row { grid-template-columns:1fr; gap:7px; } .output-link { grid-column:auto; } .publication { grid-template-columns:45px minmax(0,1fr); gap:14px; } footer { flex-direction:column; } }
+
+    .info-panel { margin-top:16px; background:white; border:1px solid var(--line); border-radius:12px; scroll-margin-top:24px; }
+    .info-panel summary { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 26px; cursor:pointer; list-style:none; }
+    .info-panel summary::-webkit-details-marker { display:none; }
+    .panel-title { display:block; color:var(--accent); font-size:19px; font-weight:650; }
+    .panel-subtitle { display:block; color:var(--muted); font-size:13px; margin-top:3px; }
+    .panel-toggle { width:28px; height:28px; flex-shrink:0; display:grid; place-items:center; border-radius:50%; background:var(--accent-soft); color:var(--accent); font-size:22px; }
+    .panel-toggle::before { content:''; width:7px; height:7px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); transition:transform .2s; }
+    .info-panel[open] .panel-toggle::before { transform:rotate(225deg); }
+    .info-panel[open] summary { border-bottom:1px solid var(--line); }
+    .panel-body { padding:24px; }
+    .panel-body .research-layout { padding:0; border:0; }
+    .panel-body .output-list,.panel-body .publication-list,.panel-body .cv-panel { border:0; padding:0; }
+    .panel-body .more-link { margin-top:18px; }
+    @media(max-width:700px) { .info-panel summary { padding:18px; } .panel-title { font-size:17px; } .panel-body { padding:18px; } }
+
+    .featured-section { margin-top:24px; padding:0; scroll-margin-top:24px; }
+    .featured-heading { margin:0 0 16px; }
+    .featured-heading h2 { margin-bottom:4px; }
+    .featured-heading p { margin:0; color:var(--muted); font-size:13px; }
+    .featured-section > .panel-body { padding:0; }
+    .featured-section .publication-list { border:1px solid var(--line); padding:0 24px; }
+    @media(max-width:700px) { .featured-section .publication-list { padding:0 18px; } }
+
+    /* A warmer palette and a compact mosaic of research projects. */
+    :root { --bg:#f7f5ef; --accent:#365b58; --accent-dark:#254541; --accent-soft:#e9efea; --line:#dedfd5; --muted:#666f69; --text:#283c36; }
+    .hero { background:linear-gradient(120deg,#254541,#365b58); border-bottom:4px solid #c99e75; }
+    .hero::after { content:'Sc'; font-size:190px; top:12px; }
+    .hero-kicker { color:#e3c29f; }
+    .hero-lead { font-family:Georgia,serif; font-size:24px; line-height:1.5; max-width:650px; }
+    .affiliation { color:#dbe6df; }
+    .profile-links a { display:inline-flex; align-items:center; gap:8px; border-color:#7a9790; font-weight:500; }
+    .profile-links svg { width:18px; height:18px; }
+    .logo-mark { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; font-weight:700; font-size:14px; }
+    .orcid-mark { border-radius:50%; background:#a6ce39; color:#203021; font-size:12px; }
+    .linkedin-mark { border-radius:3px; background:#fff; color:#0a66c2; font-family:Arial,sans-serif; }
+    .prima-mark { border:1px solid #d8ba93; color:#e3c29f; font-family:Georgia,serif; }
+    .project-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+    .project-card { display:grid; grid-template-rows:auto auto 1fr auto; gap:8px; min-height:0; aspect-ratio:auto; padding:18px; border-radius:4px; border-top:3px solid #ad785a; }
+    .project-card:nth-child(2n) { background:#f0f2eb; }
+    .project-number { margin:0; font-size:10px; color:#916343; }
+    .project-card h3 { font-size:18px; margin:0; }
+    .project-card p { font-size:12px; line-height:1.55; }
+    .project-footer { margin:0; padding-top:4px; font-size:10px; }
+    a.project-card:hover { transform:translateY(-2px); }
+    @media(min-width:1500px) { .project-grid { grid-template-columns:repeat(5,minmax(0,1fr)); } .project-card { min-height:0; } }
+    @media(max-width:1100px) and (min-width:701px) { .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:700px) { .project-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; } .project-card { min-height:0; padding:14px; } .project-card h3 { font-size:16px; } .project-card p { font-size:12px; } .hero-lead { font-size:21px; } }
+    @media(max-width:350px) { .project-grid { grid-template-columns:1fr; } }
+    .personal-note { max-width:580px; margin:22px 0 0; color:#e3c29f; font-family:Georgia,serif; font-style:italic; font-size:15px; line-height:1.6; }
+
+    .project-logo { height:54px; display:flex; align-items:center; justify-content:flex-start; }
+    .project-logo img { display:block; width:auto; max-width:100%; height:auto; max-height:54px; object-fit:contain; }
+    .project-number { min-height:54px; display:flex; align-items:center; }
+    @media(max-width:700px) { .project-logo,.project-number { height:44px; min-height:44px; } .project-logo img { max-height:44px; } }
   </style>
 </head>
 
@@ -484,24 +592,29 @@
 <div class="nav-shell">
   <nav>
     <a class="brand" href="#top">Serena <span>Crespi</span></a>
+    <p class="sidebar-description">Computational philology<br>Manuscript studies<br>Digital humanities</p>
     <div class="nav-links">
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#outputs">Outputs</a>
       <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#teaching">Teaching</a>
     </div>
+    <div class="sidebar-contact">CESR · Université de Tours<br><a href="mailto:serena.crespi@univ-tours.fr">serena.crespi@univ-tours.fr</a></div>
   </nav>
 </div>
 
 <main id="top">
 
   <header class="hero">
-    <div class="hero-kicker">Researcher in Philology and Digital Humanities</div>
+    <div class="hero-kicker">Full-stack philologist</div>
 
     <h1>Serena Crespi</h1>
 
     <p class="hero-lead">
-      Digital philology and computational approaches to historical manuscripts.
+      I study manuscripts as complex objects and build digital tools to read,
+      compare and understand them.
     </p>
 
     <div class="affiliation">
@@ -510,21 +623,24 @@
       Associate Researcher · Litt&amp;Arts · Université Grenoble Alpes
     </div>
 
-    <div class="profile-links">
-      <a href="https://orcid.org/0000-0001-6747-3257"
-         target="_blank" rel="noopener">ORCID ↗</a>
-      <a href="https://github.com/SerenaCrespi"
-         target="_blank" rel="noopener">GitHub ↗</a>
+    <p class="personal-note">In my spare time, I swap manuscripts and code for a different kind of problem: climbing routes (6c–6c+).</p>
+
+    <div class="profile-links" aria-label="Find me and my research online">
+      <a href="https://orcid.org/0000-0001-6747-3257" target="_blank" rel="noopener"><span class="logo-mark orcid-mark" aria-hidden="true">iD</span>ORCID</a>
+      <a href="https://github.com/SerenaCrespi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82c.85 0 1.71.11 2.51.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.58 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/serena-crespi-a91701181/" target="_blank" rel="noopener" title="Serena Crespi on LinkedIn"><span class="logo-mark linkedin-mark" aria-hidden="true">in</span>LinkedIn</a>
+      <a href="https://prima.hypotheses.org/" target="_blank" rel="noopener"><span class="logo-mark prima-mark" aria-hidden="true">P</span>ERC PRIMA</a>
     </div>
   </header>
 
 
-  <section id="research" class="reveal">
-    <div class="section-label">Research</div>
+  <details id="research" class="info-panel" name="profile-sections">
+    <summary><span><span class="panel-title">Research profile</span><span class="panel-subtitle">Interests and approaches</span></span><span class="panel-toggle" aria-hidden="true"></span></summary>
+    <div class="panel-body">
 
     <div class="research-layout">
       <div>
-        <h2>Research profile</h2>
+
         <div class="research-text">
           My research investigates the production, transmission and circulation
           of texts between manuscript and print, with a particular focus on early
@@ -542,19 +658,21 @@
         <span class="keyword">Digital Scholarly Editing</span>
       </div>
     </div>
-  </section>
+
+    </div>
+  </details>
 
 
-  <section id="projects" class="reveal">
-    <div class="section-label">Selected projects</div>
-    <h2>Research projects</h2>
+  <section id="projects" class="featured-section">
+    <header class="featured-heading"><h2>Research projects</h2><p>From manuscript collections to tools for reading and comparing texts.</p></header>
+    <div class="panel-body">
 
     <div class="project-grid">
 
       <a class="project-card"
          href="https://scm.univ-tours.fr/cesr/prima/paleo"
          target="_blank" rel="noopener">
-        <div class="project-number">01</div>
+        <div class="project-logo"><img src="assets/logos/pluma.png" alt="PLUMA" width="80" height="80"></div>
         <h3>PLUMA</h3>
         <p>
           Palaeographic Letterform Understanding and Manuscript Analysis.
@@ -565,7 +683,7 @@
       </a>
 
       <article class="project-card">
-        <div class="project-number">02</div>
+        <div class="project-logo"><img src="assets/logos/pim.png" alt="Poems in Motion" width="80" height="80"></div>
         <h3>Poems in Motion</h3>
         <p>
           A computational study of manuscript and print transmission integrating
@@ -577,7 +695,7 @@
       <a class="project-card"
          href="https://miv17.labdilef.it/"
          target="_blank" rel="noopener">
-        <div class="project-number">03</div>
+        <div class="project-logo"><img src="assets/logos/unifi-dilef.png" alt="Università degli Studi di Firenze · DILEF" width="120" height="80"></div>
         <h3>MIV17</h3>
         <p>
           Manoscritti italiani del XVII secolo. A research database for the
@@ -589,8 +707,8 @@
       <a class="project-card"
          href="https://fontegaia.huma-num.fr/tei/gesuiteide-tei/index.html"
          target="_blank" rel="noopener">
-        <div class="project-number">04</div>
-        <h3>Digital Critical Edition of the <em>Gesuiteide</em></h3>
+        <div class="project-logo"><img src="assets/logos/fontegaia.png" alt="FonteGaia · Université Grenoble Alpes" width="100" height="80"></div>
+        <h3><em>Gesuiteide</em></h3>
         <p>
           Digital critical edition of Ms. 48 of the <em>Gesuiteide</em>
           by Filippo Buttari Caccianemici, developed within FonteGaia.
@@ -598,12 +716,28 @@
         <div class="project-footer">Digital edition ↗</div>
       </a>
 
+      <a class="project-card"
+         href="https://github.com/SerenaCrespi/htrVariansTool"
+         target="_blank" rel="noopener">
+        <div class="project-logo"><img src="assets/logos/varians-stacked.png" alt="VARIANS" width="94" height="80"></div>
+        <h3>HTRVariansTool</h3>
+        <p>
+          A tool for comparing manuscript witnesses transcribed in ALTO XML.
+          Word alignment, scholarly review of textual variants and TEI export
+          with a critical apparatus.
+        </p>
+        <div class="project-footer">GitHub ↗</div>
+      </a>
+
+    </div>
+
     </div>
   </section>
 
 
-  <section id="outputs" class="reveal">
-    <div class="section-label">Research outputs</div>
+  <details id="outputs" class="info-panel" name="profile-sections">
+    <summary><span><span class="panel-title">Research outputs</span><span class="panel-subtitle">Models, software and documentation</span></span><span class="panel-toggle" aria-hidden="true"></span></summary>
+    <div class="panel-body">
 
     <div class="output-list">
 
@@ -648,15 +782,18 @@
 
 
     </div>
-  </section>
+
+    </div>
+  </details>
 
 
-  <section id="publications" class="reveal">
-    <div class="section-label">Selected publications</div>
+  <section id="publications" class="featured-section">
+    <header class="featured-heading"><h2>Selected publications</h2><p>Articles and forthcoming work</p></header>
+    <div class="panel-body">
 
     <div class="publication-list">
 
-      
+
 
       <article class="publication">
         <div class="pub-year">2027</div>
@@ -708,8 +845,38 @@
        target="_blank" rel="noopener">
       Complete publication record on ORCID ↗
     </a>
+
+    </div>
   </section>
 
+
+
+  <details id="experience" class="info-panel" name="profile-sections">
+    <summary><span><span class="panel-title">Academic trajectory</span><span class="panel-subtitle">Appointments and education</span></span><span class="panel-toggle" aria-hidden="true"></span></summary>
+    <div class="panel-body">
+    <p class="section-intro">Selected appointments and qualifications.</p>
+    <div class="cv-panel">
+      <div class="cv-row"><div class="cv-date">2024–present</div><div><h3>Postdoctoral Researcher / Research Engineer</h3><p>CESR, Université de Tours · ERC PRIMA. Lead of the Digital Humanities strand; co-responsibility for Literature and Philology.</p></div></div>
+      <div class="cv-row"><div class="cv-date">2026</div><div><h3>LECTIO Visiting Fellow · KU Leuven</h3><p>February–April · Special Collections manuscript research.</p></div></div>
+      <div class="cv-row"><div class="cv-date">2023–2024</div><div><h3>Research Engineer · Université Grenoble Alpes</h3><p>Litt&amp;Arts, ELAN · Digital scholarly editions, textual encoding and quality control. Co-coordinator of the DAHU platform, 2023–2024.</p></div></div>
+      <div class="cv-row"><div class="cv-date">2022–present</div><div><h3>Scientific management of digital editions · SISMEL</h3><p>XML-TEI encoding, publication of medieval Latin and Renaissance editions, and database structuring.</p></div></div>
+      <div class="cv-row"><div class="cv-date">2024</div><div><h3>PhD in Digital Humanities</h3><p>Università degli Studi di Firenze &amp; CESR, Université de Tours · Joint doctorate. <em>Le manuscrit à l’époque de l’imprimé, entre circulation privée et marché de niche.</em></p></div></div>
+      <div class="cv-row"><div class="cv-date">2026 · 2018</div><div><h3>Qualifications</h3><p>Qualification for Maître de conférences, CNU Section 14 (2026). MA in Modern Philology, Università degli Studi di Milano, 110/110 cum laude (2018).</p></div></div>
+    </div>
+
+    </div>
+  </details>
+  <details id="teaching" class="info-panel" name="profile-sections">
+    <summary><span><span class="panel-title">Teaching &amp; methods</span><span class="panel-subtitle">Courses, workshops and technical skills</span></span><span class="panel-toggle" aria-hidden="true"></span></summary>
+    <div class="panel-body">
+    <div class="cv-panel">
+      <div class="cv-row"><div class="cv-date">2024–2026</div><div><h3>Digital Humanities · CESR, Université de Tours</h3><p>MA courses in textual data, digital data, interoperability and introduction to Digital Humanities.</p></div></div>
+      <div class="cv-row"><div class="cv-date">2026 · 2023</div><div><h3>Workshops &amp; doctoral training</h3><p>Digital Humanities / Digital Philology workshop, Norwegian Institute in Rome (2026). XML-TEI encoding, doctoral training, Zurich (2023).</p></div></div>
+      <div class="cv-row"><div class="cv-date">Methods</div><div><h3>From manuscripts to research data</h3><p>TEI/XML · XPath, XQuery &amp; XSLT · Python · HTR/OCR · OpenCV · Kraken · Data augmentation · FAIR research data.</p></div></div>
+    </div>
+
+    </div>
+  </details>
 
   <footer>
     <div>© Serena Crespi · Centre d'Études Supérieures de la Renaissance</div>
@@ -725,40 +892,31 @@
 </main>
 
 <script>
-  const revealItems = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.06 });
-
-    revealItems.forEach((item) => revealObserver.observe(item));
-
-    const sections = document.querySelectorAll("section[id]");
-    const links = document.querySelectorAll(".nav-links a");
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          links.forEach((link) => {
-            link.classList.toggle(
-              "active",
-              link.getAttribute("href") === "#" + entry.target.id
-            );
-          });
-        }
-      });
-    }, { rootMargin: "-28% 0px -62% 0px" });
-
-    sections.forEach((section) => navObserver.observe(section));
-  } else {
-    revealItems.forEach((item) => item.classList.add("visible"));
+  const panels = [...document.querySelectorAll('details.info-panel')];
+  const links = [...document.querySelectorAll('.nav-links a')];
+  function markActive() {
+    links.forEach(link => {
+      const selected = panels.some(panel => panel.open && link.hash === '#' + panel.id);
+      link.classList.toggle('active', selected);
+      if (selected) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
   }
+  panels.forEach(panel => panel.addEventListener('toggle', markActive));
+  function openHash() {
+    const target = panels.find(panel => '#' + panel.id === location.hash);
+    if (target) {
+      panels.forEach(panel => { panel.open = panel === target; });
+      requestAnimationFrame(() => target.scrollIntoView({block:'start'}));
+    }
+    markActive();
+  }
+  links.forEach(link => link.addEventListener('click', () => {
+    const target = panels.find(panel => '#' + panel.id === link.hash);
+    if (target) panels.forEach(panel => { panel.open = panel === target; });
+  }));
+  window.addEventListener('hashchange', openHash);
+  openHash();
 </script>
 
 </body>
